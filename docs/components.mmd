@@ -1,0 +1,7 @@
+graph LR
+    DockerAPI --> id1(Publisher)
+    id1(Publisher) --> DockerAPI
+    id1(Publisher) --> MQTT
+    MQTT --> Dashboard
+   
+    style id1 fill:white,stroke:green,stroke-width:4px

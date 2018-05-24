@@ -4,14 +4,14 @@
   "description": "An MQTT Docker publisher for the BigBoat ecosystem",
   "main": "index.coffee",
   "scripts": {
+    "mermaid": "for i in ./docs/*.mmd; do mmdc -i $i -o $i.png -t neutral; done",
     "start": "forever --minUptime 2500 --spinSleepTime 5000 ./index.js",
     "test": "mocha --reporter mocha-junit-reporter --recursive tests",
     "test:watch": "mocha --watch --recursive tests",
     "test:coverage": "nyc --reporter=html --reporter=text --reporter=lcov npm test",
     "test:mutation": "stryker run",
     "test:reports": "npm run test:coverage && npm run test:mutation",
-    "eslint": "eslint -c .eslintrc.js  ./src/**.js",
-    "precommit": "npm test && npm run eslint"
+    "eslint": "eslint -c .eslintrc.js  ./src/**.js"
   },
   "keywords": [
     "bigboat",
@@ -22,21 +22,22 @@
   "author": "IQT",
   "license": "Apache-2.0",
   "dependencies": {
-    "dockerode": "^2.3.0",
+    "dockerode": "^2.5.5",
     "forever": "^0.15.2",
-    "mqtt": "^2.4.0"
+    "mqtt": "^2.18.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "coveralls": "^2.13.0",
+    "coveralls": "^2.13.3",
     "eslint": "^3.19.0",
-    "eslint-config-standard": "^10.2.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "husky": "^0.13.3",
-    "mocha": "^3.2.0",
-    "mocha-junit-reporter": "^1.13.0",
-    "nyc": "^10.2.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "husky": "^0.13.4",
+    "mermaid.cli": "^0.4.6",
+    "mocha": "^3.5.3",
+    "mocha-junit-reporter": "^1.17.0",
+    "nyc": "^10.3.2",
     "stryker": "^0.5.9",
     "stryker-api": "^0.4.2",
     "stryker-html-reporter": "^0.3.0",
